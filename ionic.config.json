@@ -1,5 +1,8 @@
 {
   "name": "certificados",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

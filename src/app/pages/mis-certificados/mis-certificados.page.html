@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mis_certificados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="certificados.length > 0; else no_certificados">
+    <ion-card
+    *ngFor="let certificado of this.certificados"
+    (click) = "seleccionarCertificado(certificado)"
+  >
+    <ion-card-content>
+      <ion-item lines="none">
+
+        <ion-title>Curso:</ion-title>
+        <ion-text>
+          {{ certificado.data.json.curso }}
+        </ion-text>
+
+      </ion-item>
+      <ion-item *ngIf="certificado.txid == certificadoSeleccionado.txid">
+        <ngx-qrcode [qrc-value]="codigoCreado"></ngx-qrcode>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  </div>
+  
+
+
+  <ng-template #no_certificados>
+    <ion-text>No hay certificados</ion-text>
+  </ng-template>
+</ion-content>

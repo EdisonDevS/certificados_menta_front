@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mi_historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title>Seleccione que elemetos desea que se vean en su historial</ion-title>
+  <ion-list>
+    <ion-item>
+      <ion-label>Certificados</ion-label>
+      <ion-checkbox [(ngModel)] = "cert" (ionChange) = "generarCodigo()"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Insignias</ion-label>
+      <ion-checkbox [(ngModel)] = "insig" (ionChange) = "generarCodigo()"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Test</ion-label>
+      <ion-checkbox [(ngModel)] = "test" (ionChange) = "generarCodigo()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-card  *ngIf="isOneSelected()">
+    <ion-card-content>
+      <ion-item id="qr">
+        <ngx-qrcode [qrc-value]="codigoGenerado"></ngx-qrcode>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

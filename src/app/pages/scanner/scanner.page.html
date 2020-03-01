@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>scanner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click) = "scan()">Escanear</ion-button>
+
+  <ion-list *ngIf="certificados.length > 0">
+
+      <ion-card *ngFor="let certificado of this.certificados" color = "{{ colors[certificado.data.json.type] }}">
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngIf="certificado.data.json.type == 'insignia'">
+              <ion-title>
+                Insignia:
+              </ion-title>
+              <ion-label>
+                {{ certificado.data.json.insignia }}
+              </ion-label>
+            </ion-item>
+            <ion-item *ngIf="certificado.data.json.type == 'certificacion'">
+              <ion-title>
+                Curso:
+              </ion-title>
+              <ion-label>
+                {{ certificado.data.json.curso }}
+              </ion-label>
+            </ion-item>
+            <ion-item *ngIf="certificado.data.json.type == 'test'">
+              <ion-title>
+                Test:
+              </ion-title>
+              <ion-label>
+                {{ certificado.data.json.test }}
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-title>
+                Nombre:
+              </ion-title>
+              <ion-label>
+                {{ certificado.data.json.nombre }}
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-title>
+                Apellido:
+              </ion-title>
+              <ion-label>
+                {{ certificado.data.json.apellido }}
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-title>
+                Identificacion:
+              </ion-title>
+              <ion-label>
+                {{ certificado.keys[0] }}
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+  </ion-list>
+
+</ion-content>
