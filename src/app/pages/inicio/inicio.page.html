@@ -1,15 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
+<ion-header class="fixed">
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content class="h-screen flex justify-center items-center bg-gray-100">
+  <div class="h-screen flex items-center bg-gray-100">
 
-<ion-content>
+    <ion-card class="w-full">
+      <ion-card-header>
+        <ion-card-title>Ingresa la cedula</ion-card-title>
+      </ion-card-header>
 
-  <ion-item>
-    <ion-input type="number" placeholder="Identificación" [(ngModel)] = "identificacion"></ion-input>
-
-    <ion-button (click)="guardarIdentificacion()">Continuar</ion-button>
-  </ion-item>
-
+      <ion-card-content>
+        <ion-item>
+          <ion-input type="number" placeholder="Identificación" [(ngModel)] = "identificacion"></ion-input>
+        </ion-item>
+        <div class="flex justify-end mt-4">
+          <ion-button (click)="guardarIdentificacion()">Continuar</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

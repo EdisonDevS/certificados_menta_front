@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class EnvService {
 
-  API_URL:string = /*'https://menta.utp.edu.co'*/'http://192.168.0.15:3700/';
+  API_URL:string = /*'https://menta.utp.edu.co'*/'http://192.168.0.116:3700/';
 
   constructor() { }
 }

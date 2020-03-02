@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mis_certificados</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/personal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mis Certificados</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,6 +32,6 @@
 
 
   <ng-template #no_certificados>
-    <ion-text>No hay certificados</ion-text>
+    <p class="ion-padding text-gray-700 font-lg font-semibold ">No hay certificados</p>
   </ng-template>
 </ion-content>

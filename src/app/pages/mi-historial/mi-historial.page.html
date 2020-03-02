@@ -1,32 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mi_historial</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/personal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historial</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-title>Seleccione que elemetos desea que se vean en su historial</ion-title>
-  <ion-list>
-    <ion-item>
-      <ion-label>Certificados</ion-label>
-      <ion-checkbox [(ngModel)] = "cert" (ionChange) = "generarCodigo()"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Insignias</ion-label>
-      <ion-checkbox [(ngModel)] = "insig" (ionChange) = "generarCodigo()"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Test</ion-label>
-      <ion-checkbox [(ngModel)] = "test" (ionChange) = "generarCodigo()"></ion-checkbox>
-    </ion-item>
-  </ion-list>
-
-  <ion-card  *ngIf="isOneSelected()">
-    <ion-card-content>
-      <ion-item id="qr">
-        <ngx-qrcode [qrc-value]="codigoGenerado"></ngx-qrcode>
+  <div>
+    <h2 class="px-4 text-gray-800 text-lg font-semibold">Seleccione que elemetos desea que se vean en su historial</h2>
+    <ion-list>
+      <ion-item>
+        <ion-label>Certificados</ion-label>
+        <ion-checkbox slot="start" [(ngModel)] = "cert" (ionChange) = "generarCodigo()"></ion-checkbox>
       </ion-item>
-    </ion-card-content>
-  </ion-card>
+      <ion-item>
+        <ion-label>Insignias</ion-label>
+        <ion-checkbox slot="start" [(ngModel)] = "insig" (ionChange) = "generarCodigo()"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Test</ion-label>
+        <ion-checkbox slot="start" [(ngModel)] = "test" (ionChange) = "generarCodigo()"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-card  *ngIf="isOneSelected()">
+      <ion-card-content>
+        <div class="mx-auto flex justify-center">
+          <ngx-qrcode [qrc-value]="codigoGenerado"></ngx-qrcode>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 </ion-content>
